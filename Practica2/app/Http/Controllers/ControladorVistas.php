@@ -30,7 +30,7 @@ class ControladorVistas extends Controller
     }
 
     public function showIngresar(){
-        return view('ingresar');
+        
     }
 
     public function showRecuerdos(){

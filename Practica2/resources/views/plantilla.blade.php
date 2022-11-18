@@ -41,11 +41,11 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('in')?'text-primary fw-bold text-decoration-underline':'' }} " href="{{ route('in') }}">Registro de recuerdos</a>
+                <a class="nav-link {{ request()->routeIs('recuerdo.create')?'text-primary fw-bold text-decoration-underline':'' }} " href="{{ route('recuerdo.create') }}">Registro de recuerdos</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('rec')?'text-primary fw-bold text-decoration-underline':'' }}" href="{{ route('rec') }}">Consulta de recuerdos</a>
+                <a class="nav-link {{ request()->routeIs('recuerdo.index')?'text-primary fw-bold text-decoration-underline':'' }}" href="{{ route('recuerdo.index') }}">Consulta de recuerdos</a>
               </li>
 
             </ul>

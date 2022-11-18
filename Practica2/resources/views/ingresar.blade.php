@@ -5,7 +5,7 @@
 
   @if (session()->has('confirmacion'))
 
-    {!! "<script> Swal.fire('Correcto!','Tu recuerdo llego al controlador!','success') </script>" !!}
+    {!! "<script> Swal.fire('Correcto!','Tu recuerdo se guardo!','success') </script>" !!}
 
   @endif
 
@@ -38,7 +38,7 @@
         </div>
 
         <div class="card-body">
-            <form method= "post" action="guardarRecuerdo">
+            <form method= "post" action="{{route('recuerdo.store')}}">
                 @csrf
 
                 <div class="mb-3">

@@ -2,16 +2,24 @@
 
 use App\Http\Controllers\ControladorVistas;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorBD;
+
+
+//Rutas para Resource
+
+//Create
+Route::get('recuerdo/create', [ControladorBD::class, 'create'])->name('recuerdo.create');
+
+//Store
+Route::post('recuerdo', [ControladorBD::class, 'store'])->name('recuerdo.store');
+
+//Index
+Route::get('recuerdo', [ControladorBD::class, 'index'])->name('recuerdo.index');
 
 
 
-/** ===  Rutas Tipo VIEW  ===
-Route::view('/','welcome');
 
-Route::view('Home','home')->name('casa');
-Route::view('Ingresar','ingresar')->name('in');
-Route::view('Recuerdos','recuerdos')->name('rec');
-**/
+
 
 
 
@@ -23,13 +31,13 @@ Route::get('/', function () {
 // Rutas Individuales para controlador
 Route::get('Home',[ControladorVistas::class, 'showHome'])->name('casa');
 
-Route::get('Ingresar', [ControladorVistas::class, 'showIngresar'])->name('in');
 
-Route::get('Recuerdos', [ControladorVistas::class, 'showRecuerdos'])->name('rec');
+
+
 
 
 //Request por POST
-Route::post('guardarRecuerdo', [ControladorVistas::class, 'procesarRecuerdo'])->name('SaveMem');
+
 
 
 
