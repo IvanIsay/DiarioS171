@@ -51,13 +51,24 @@ class controladorBD extends Controller
   
     public function edit($id)
     {
-        //
+        $consultaId= DB::table('tb_recuerdos')->where('idRecuerdo', $id)->first();
+
+        return view('editar',compact('consultaId'));
     }
 
  
-    public function update(Request $request, $id)
+    public function update(validadorDiario $request, $id)
     {
-        //
+        DB::table('tb_recuerdos')->where('idRecuerdo', $id)->update([
+            "titulo"=> $request->input('txtTitulo'),
+            "recuerdo"=> $request->input('txtRecuerdo'),
+            "updated_at"=> Carbon::now(),
+        ]);
+
+        return redirect('recuerdo')->with('confirmacion',"tu recuerdo se actualizo");
+    
+
+        
     }
 
     public function destroy($id)

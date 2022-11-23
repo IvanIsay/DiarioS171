@@ -20,7 +20,10 @@
         </div>
 
         <div class="card-footer ">
-            <button type="submit" class="btn btn-warning m-1">A</button>
+           
+            <a href="{{ route('recuerdo.edit',$consulta->idRecuerdo )}}" class="btn btn-warning m-1"> Actualizar </a>
+            
+            
             <button type="submit" class="btn btn-danger m-1">E</button>
         </div>
     
