@@ -24,6 +24,18 @@ Route::get('recuerdo/{id}/edit', [ControladorBD::class, 'edit'])->name('recuerdo
 Route::put('recuerdo/{id}', [ControladorBD::class, 'update'])->name('recuerdo.update');
 
 
+//Show
+Route::get('recuerdo/{id}/show', [ControladorBD::class, 'show'])->name('recuerdo.show');
+
+//Destroy
+Route::delete('recuerdo/{id}', [ControladorBD::class, 'destroy'])->name('recuerdo.destroy');
+
+
+
+
+
+
+
 
 
 

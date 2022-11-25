@@ -41,13 +41,6 @@ class controladorBD extends Controller
     }
 
 
-
- 
-    public function show($id)
-    {
-        //
-    }
-
   
     public function edit($id)
     {
@@ -65,14 +58,26 @@ class controladorBD extends Controller
             "updated_at"=> Carbon::now(),
         ]);
 
-        return redirect('recuerdo')->with('confirmacion',"tu recuerdo se actualizo");
+        return redirect('recuerdo')->with('Actualizado',"xxxx");
     
 
         
     }
 
+
+    public function show($id)
+    {
+        $consultaId= DB::table('tb_recuerdos')->where('idRecuerdo', $id)->first();
+
+        return view('confirmar',compact('consultaId'));
+    }
+
+
     public function destroy($id)
     {
-        //
+        DB::table('tb_recuerdos')->where('idRecuerdo', $id)->delete();
+
+        return redirect('recuerdo')->with('Eliminado',"abc");
+    
     }
 }

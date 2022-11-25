@@ -3,6 +3,21 @@
 @section('contenido')
 
 
+@if (session()->has('Actualizado'))
+
+{!! "<script> Swal.fire('Correcto!','Tu recuerdo se actualizo!','success') </script>" !!}
+
+@endif
+
+@if (session()->has('Eliminado'))
+
+{!! "<script> Swal.fire('Correcto!','Tu recuerdo se elimino!','success') </script>" !!}
+
+@endif
+
+
+
+
 @foreach($resultRec as $consulta)
 
 <div class="container col-md-6">
@@ -23,8 +38,8 @@
            
             <a href="{{ route('recuerdo.edit',$consulta->idRecuerdo )}}" class="btn btn-warning m-1"> Actualizar </a>
             
+            <a href="{{ route('recuerdo.show',$consulta->idRecuerdo )}}" class="btn btn-danger m-1"> Eliminar</a>
             
-            <button type="submit" class="btn btn-danger m-1">E</button>
         </div>
     
     </div>
